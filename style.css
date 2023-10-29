@@ -9,6 +9,8 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  /* background: rgb(160, 160, 160); */
+  background: rgb(255, 255, 255);
 }
 
 html {
@@ -16,7 +18,7 @@ html {
 }
 
 p {
-  color: rgb(53, 183, 172);
+  color: rgb(31, 59, 57);
 }
 
 /* TRANSITION */
@@ -27,44 +29,55 @@ a,
 }
 
 /* DESKTOP NAV */
+nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 4vh;
+  position: fixed;
+  background-color: #D3D3D3;
+  width: 100%;
+}
 
-nav,
 .nav-links {
   display: flex;
-}
-
-nav {
-  justify-content: space-around;
-  align-items: center;
-  height: 17vh;
-}
-
-.nav-links {
+  /* gap: 1rem; */
   gap: 2rem;
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  width: 90%;
+  justify-content: flex-end;
 }
 
 a {
   color: black;
+  
+  opacity: 0.6;
+  transform: scale(1.0);
   text-decoration: none;
-  text-decoration-color: white;
+  text-decoration-color: rgb(223, 223, 223);
 }
 
 a:hover {
-  color: rgb(53, 183, 172);
-  text-decoration: underline;
-  text-underline-offset: 1rem;
-  text-decoration-color: rgb(53, 183, 172);
+  opacity: 1.0;
 }
 
 .logo {
-  font-size: 2rem;
+  width: 10%;
+  padding-left: 1%;
+  font-size: 3rem;
+  animation-name: popup_anim;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
 
-.logo:hover {
-  cursor: default;
-}
+@keyframes popup_anim {
+  0%{transform: scale(0.7);}
+  50%{transform: scale(0.85);}
+  100%{transform: scale(0.7);}
+ }
+
 
 /* HAMBURGER MENU */
 
@@ -88,7 +101,7 @@ a:hover {
 
 .hamburger-icon span {
   width: 100%;
-  height: 2px;
+  height: 3px;
   background-color: black;
   transition: all 0.3 ease-in-out;
 }
@@ -150,10 +163,16 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
-  margin: 0 10rem;
-  box-sizing: border-box;
-  min-height: fit-content;
+  padding-bottom: 4vh;
+  /* height: 96vh; */
+  /* margin: 0 10rem; */
+  /* box-sizing: border-box; */
+  /* min-height: fit-content; */
+}
+
+section h1{
+  font-weight: 500;
+  font-size: medium;
 }
 
 .section-container {
@@ -166,10 +185,17 @@ section {
   display: flex;
   justify-content: center;
   gap: 5rem;
-  height: 80vh;
+  /* height: 80vh; */
+  width: 100%;
+  /* background-color: #F0F0F0;   */
+  background-image: url(./assets/background.jpg);
+  background-position: center;
+  background-size: cover;
+  /* position: relative; */
 }
 
 .section__pic-container {
+  padding-top: 2%;
   display: flex;
   height: 400px;
   width: 400px;
@@ -185,9 +211,9 @@ section {
   font-weight: 600;
 }
 
-.section__text__p1 {
+ .section__text__p1 {
   text-align: center;
-}
+} 
 
 .section__text__p2 {
   font-size: 1.75rem;
@@ -239,23 +265,12 @@ section {
   cursor: pointer;
 }
 
-.btn-color-1,
+.btn-color-1:hover,
 .btn-color-2:hover {
-  background: rgb(53, 53, 53);
+  background: rgb(0, 0, 0);
   color: white;
 }
 
-.btn-color-1:hover {
-  background: rgb(0, 0, 0);
-}
-
-.btn-color-2 {
-  background: none;
-}
-
-.btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
-}
 
 .btn-container {
   gap: 1rem;
@@ -264,7 +279,12 @@ section {
 /* ABOUT SECTION */
 
 #about {
-  position: relative;
+  justify-content: center;
+  justify-items: center;
+  /* position: relative; */
+  width: 60%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .about-containers {
@@ -287,12 +307,6 @@ section {
   border-radius: 2rem;
 }
 
-.arrow {
-  position: absolute;
-  right: -5rem;
-  bottom: 2.5rem;
-}
-
 .details-container {
   padding: 1.5rem;
   flex: 1;
@@ -302,7 +316,9 @@ section {
   border-color: rgb(163, 163, 163);
   text-align: center;
 }
-
+.details-container:hover{
+  background-color: #F0F0F0;  
+}
 .section-container {
   gap: 4rem;
   height: 80%;
@@ -311,23 +327,76 @@ section {
 .section__pic-container {
   height: 400px;
   width: 400px;
-  margin: auto 0;
 }
 
-/* EXPERIENCE SECTION */
-
-#experience {
-  position: relative;
+/* WORK EXPERIENCE SECTION*/
+#work_place {
+  background-color: #F0F0F0; 
 }
 
-.experience-sub-title {
+.work_place_container{
+  display: flex;
+  width:100%;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+
+
+#work_place .section-container {
+  justify-content: space-around;
+  width:100%;
+}
+
+#work_place about-containers{
+  width:100%;
+  gap: 0.5rem;
+
+}
+
+#work_place .details-container {
+  /* display: flex;
+  flex-direction: column; */
+  text-align:left; 
+  /* gap: 0.5rem; */
+}
+
+#work_place .role{
+  padding: 3%;
+  color: #000000;
+  font-size: larger;
+  font-weight: 700;
+}
+
+#work_place .company_info{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#work_place .company_info .company{
+  font-weight: 700;
+}
+
+#work_place .company_info .location{
+  font-weight: 500;
+}
+
+/* skills SECTION */
+
+#skills {
+  width: 60%;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.skills-sub-title {
   color: rgb(85, 85, 85);
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
 }
 
-.experience-details-container {
+.section-details-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -344,8 +413,8 @@ section {
 
 article {
   display: flex;
-  width: 10rem;
-  justify-content: space-around;
+  /* width: 10rem; */
+  /* justify-content: space-around; */
   gap: 0.5rem;
 }
 
@@ -356,29 +425,29 @@ article .icon {
 /* PROJECTS SECTION */
 
 #projects {
-  position: relative;
+  background-color: #F0F0F0;  
 }
 
-.color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
+.project-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1%;
 }
 
 .project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  border-radius: 1rem;
+  width: 60%;
+  height: 40%;
 }
 
 .project-title {
   margin: 1rem;
   color: black;
+  opacity: 0.8;
 }
 
-.project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
-}
 
 /* CONTACT */
 
@@ -386,7 +455,7 @@ article .icon {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  height: 30vh;
 }
 
 .contact-info-upper-container {
@@ -423,10 +492,11 @@ article .icon {
 /* FOOTER SECTION */
 
 footer {
-  height: 26vh;
-  margin: 0 1rem;
+  /* height: 10vh; */
+  /* margin: 0 1rem; */
 }
 
 footer p {
   text-align: center;
 }
+
